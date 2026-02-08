@@ -4,7 +4,7 @@ export default function Page() {
   return (
     <div className="relative min-h-screen bg-neutral-950 text-white overflow-hidden">
       {/* Glow background (sempre atrás) */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-emerald-500/20 blur-3xl" />
         <div className="absolute top-32 left-1/2 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-yellow-400/10 blur-3xl" />
       </div>
@@ -55,23 +55,72 @@ export default function Page() {
             >
               ✅ Quero entrar no grupo do WhatsApp
             </a>
+
+            <p className="mt-3 text-sm text-white/60">
+              Acesso gratuito • Saída a qualquer momento
+            </p>
+
+            {/* Cards */}
+            <div className="mt-8 grid grid-cols-3 gap-3">
+              <div className="rounded-xl bg-white/5 p-4 text-center ring-1 ring-white/10">
+                <p className="text-2xl font-black">+2000</p>
+                <p className="text-xs text-white/60">alunos</p>
+              </div>
+              <div className="rounded-xl bg-white/5 p-4 text-center ring-1 ring-white/10">
+                <p className="text-2xl font-black">Do zero</p>
+                <p className="text-xs text-white/60">sem travar</p>
+              </div>
+              <div className="rounded-xl bg-white/5 p-4 text-center ring-1 ring-white/10">
+                <p className="text-2xl font-black">Prático</p>
+                <p className="text-xs text-white/60">mão na massa</p>
+              </div>
+            </div>
           </div>
 
-          {/* IMAGEM HERO */}
+          {/* IMAGEM HERO (correção definitiva) */}
           <div className="relative">
             <div className="absolute -inset-3 rounded-3xl bg-gradient-to-b from-emerald-500/20 to-yellow-400/10 blur-2xl -z-10" />
-            <div className="relative overflow-hidden rounded-3xl ring-1 ring-white/10 bg-black/10">
-              <img
-                src="/matheus-hero.jpg"
-                alt="Matheus com peças de madeira e resina"
-                className="w-full h-auto object-cover"
-              />
+
+            <div className="relative z-10 overflow-hidden rounded-3xl ring-1 ring-white/10 bg-black/10">
+              {/* altura fixa pra não sumir */}
+              <div className="relative w-full h-[420px] sm:h-[520px] lg:h-[650px]">
+                <img
+                  src="/matheus-hero.jpg"
+                  alt="Matheus com peças de madeira e resina"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* GALERIA */}
-        <section className="mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Conteúdo */}
+        <section className="mt-20 rounded-3xl bg-white/5 p-8 ring-1 ring-white/10">
+          <h2 className="text-2xl font-black">
+            O que você vai aprender na aula
+          </h2>
+
+          <ul className="mt-6 grid gap-4 sm:grid-cols-2 text-white/80">
+            <li>✅ Tipos de resina e pigmentos</li>
+            <li>✅ Ferramentas certas para começar</li>
+            <li>✅ Onde comprar material</li>
+            <li>✅ Lixas e acabamentos</li>
+            <li>✅ Erros que fazem a resina dar ruim</li>
+            <li>✅ Oportunidades para ganhar dinheiro</li>
+          </ul>
+
+          <a
+            href={WHATSAPP_GROUP_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-8 inline-flex rounded-2xl bg-emerald-500 px-6 py-4 text-base font-extrabold text-neutral-950"
+          >
+            🚀 Entrar no grupo gratuito
+          </a>
+        </section>
+
+        {/* Galeria de peças */}
+        <section className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <img src="/peca1.jpg" className="rounded-2xl" alt="Peça 1" />
           <img src="/peca2.jpg" className="rounded-2xl" alt="Peça 2" />
         </section>
@@ -79,6 +128,7 @@ export default function Page() {
         {/* Footer */}
         <footer className="mt-20 text-center text-xs text-white/50">
           <p>© {new Date().getFullYear()} Universidade da Resina</p>
+          <p>Políticas de Privacidade • Termos de Uso</p>
         </footer>
       </main>
 
