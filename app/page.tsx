@@ -1,6 +1,4 @@
-import Image from "next/image";
-
-const WHATSAPP_GROUP_URL = "https://chat.whatsapp.com/SEU_LINK_AQUI"; // <-- TROQUE AQUI
+const WHATSAPP_GROUP_URL = "https://chat.whatsapp.com/SEU_LINK_AQUI"; // TROQUE AQUI
 
 export default function Page() {
   return (
@@ -57,73 +55,30 @@ export default function Page() {
             >
               ✅ Quero entrar no grupo do WhatsApp
             </a>
-
-            <p className="mt-3 text-sm text-white/60">
-              Acesso gratuito • Saída a qualquer momento
-            </p>
-
-            <div className="mt-8 grid grid-cols-3 gap-3">
-              <div className="rounded-xl bg-white/5 p-4 text-center ring-1 ring-white/10">
-                <p className="text-2xl font-black">+2000</p>
-                <p className="text-xs text-white/60">alunos</p>
-              </div>
-              <div className="rounded-xl bg-white/5 p-4 text-center ring-1 ring-white/10">
-                <p className="text-2xl font-black">Do zero</p>
-                <p className="text-xs text-white/60">sem travar</p>
-              </div>
-              <div className="rounded-xl bg-white/5 p-4 text-center ring-1 ring-white/10">
-                <p className="text-2xl font-black">Prático</p>
-                <p className="text-xs text-white/60">mão na massa</p>
-              </div>
-            </div>
           </div>
 
-          {/* Image */}
+          {/* IMAGEM HERO */}
           <div className="relative">
             <div className="absolute -inset-3 rounded-3xl bg-gradient-to-b from-emerald-500/20 to-yellow-400/10 blur-2xl" />
             <div className="relative overflow-hidden rounded-3xl ring-1 ring-white/10">
-              <Image
+              <img
                 src="/matheus-hero.jpg"
                 alt="Matheus com peças de madeira e resina"
-                width={500}
-                height={650}
-                className="object-cover w-full h-full"
-                priority
-                unoptimized
+                className="w-full h-auto object-cover"
               />
             </div>
           </div>
         </section>
 
-        {/* Conteúdo */}
-        <section className="mt-20 rounded-3xl bg-white/5 p-8 ring-1 ring-white/10">
-          <h2 className="text-2xl font-black">
-            O que você vai aprender na aula
-          </h2>
-
-          <ul className="mt-6 grid gap-4 sm:grid-cols-2 text-white/80">
-            <li>✅ Tipos de resina e pigmentos</li>
-            <li>✅ Ferramentas certas para começar</li>
-            <li>✅ Lixas e acabamentos</li>
-            <li>✅ Onde comprar material</li>
-            <li>✅ Erros que fazem a resina dar ruim</li>
-            <li>✅ Oportunidades para ganhar dinheiro</li>
-          </ul>
-
-          <a
-            href={WHATSAPP_GROUP_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-8 inline-flex rounded-2xl bg-emerald-500 px-6 py-4 text-base font-extrabold text-neutral-950"
-          >
-            🚀 Entrar no grupo gratuito
-          </a>
+        {/* GALERIA */}
+        <section className="mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <img src="/peca1.jpg" className="rounded-2xl" />
+          <img src="/peca2.jpg" className="rounded-2xl" />
         </section>
 
         {/* Footer */}
         <footer className="mt-20 text-center text-xs text-white/50">
           <p>© {new Date().getFullYear()} Universidade da Resina</p>
-          <p>Políticas de Privacidade • Termos de Uso</p>
         </footer>
       </main>
 
