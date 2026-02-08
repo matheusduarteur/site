@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const WHATSAPP_GROUP_URL = "https://chat.whatsapp.com/SEU_LINK_AQUI";
+const WHATSAPP_GROUP_URL = "https://chat.whatsapp.com/SEU_LINK_AQUI"; // <-- TROQUE AQUI
 
 export default function Page() {
   return (
@@ -89,6 +89,7 @@ export default function Page() {
                 height={650}
                 className="object-cover w-full h-full"
                 priority
+                unoptimized
               />
             </div>
           </div>
