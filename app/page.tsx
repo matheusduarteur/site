@@ -2,9 +2,9 @@ const WHATSAPP_GROUP_URL = "https://chat.whatsapp.com/SEU_LINK_AQUI"; // TROQUE 
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-neutral-950 text-white">
-      {/* Glow background (fica atrás de tudo) */}
-      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <div className="relative min-h-screen bg-neutral-950 text-white overflow-hidden">
+      {/* Glow background (sempre atrás) */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-emerald-500/20 blur-3xl" />
         <div className="absolute top-32 left-1/2 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-yellow-400/10 blur-3xl" />
       </div>
@@ -59,10 +59,8 @@ export default function Page() {
 
           {/* IMAGEM HERO */}
           <div className="relative">
-            <div className="absolute -inset-3 rounded-3xl bg-gradient-to-b from-emerald-500/20 to-yellow-400/10 blur-2xl" />
-
-            {/* z-10 garante que a imagem fique acima do glow */}
-            <div className="relative z-10 overflow-hidden rounded-3xl ring-1 ring-white/10">
+            <div className="absolute -inset-3 rounded-3xl bg-gradient-to-b from-emerald-500/20 to-yellow-400/10 blur-2xl -z-10" />
+            <div className="relative overflow-hidden rounded-3xl ring-1 ring-white/10 bg-black/10">
               <img
                 src="/matheus-hero.jpg"
                 alt="Matheus com peças de madeira e resina"
